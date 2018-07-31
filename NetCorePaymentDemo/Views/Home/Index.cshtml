@@ -1,0 +1,23 @@
+﻿@model NetCorePaymentDemo.Models.PaymentModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <h3>Demo Payment with Worldline Sips</h3>
+    <form asp-action="Payment">
+        <div class="form-group">
+            <label asp-for="Amount" class="control-label">Amount:</label>
+            <input asp-for="Amount" class="form-control" />
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CurrencyCode" class="control-label">Currency Code:</label>
+            <input asp-for="CurrencyCode" value="EUR" readonly="readonly" />
+            <span asp-validation-for="CurrencyCode" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit">Payment</button>
+        </div>
+    </form>
+</div>
